@@ -4,13 +4,17 @@ This repository contains my personal dotfiles for:
 - Alacritty - A fast, cross-platform terminal emulator
 - Fish Shell - A smart and user-friendly command line shell
 - Neovim - Hyperextensible Vim-based text editor
-- iTerm2 - A terminal emulator for macOS
+- Git - Version control system configuration
 
 ## Prerequisites
 
+Before installation, make sure you have these installed:
 - macOS
 - Git
-- Internet connection (for downloading packages)
+- [Homebrew](https://brew.sh)
+- Fish shell (`brew install fish`)
+- Alacritty (`brew install alacritty`)
+- Neovim (`brew install neovim`)
 
 ## Installation
 
@@ -27,32 +31,38 @@ chmod +x install.sh
 ```
 
 The install script will:
-- Create necessary symbolic links
-- Install required packages via Homebrew
+- Move all configurations to `~/.config`
+- Set up Git global configuration
 - Configure Fish as your default shell
-- Set up your development environment
+- Handle existing shell configurations (zsh)
 
 ## Components
+
+### Fish Shell
+- Smart and user-friendly command line shell
+- Custom aliases and functions
+- Git abbreviations
+- Integration with:
+  - Homebrew
+  - Node Version Manager
+  - Starship prompt (if installed)
+  - fzf for history search
+
+### Git Configuration
+- Global gitignore
+- Useful aliases and defaults
+- Enhanced diff and merge tools
+- Custom color settings
 
 ### Alacritty
 - Modern terminal emulator
 - GPU-accelerated rendering
-- Configuration files in `alacritty/`
-
-### Fish Shell
-- User-friendly shell with great defaults
-- Syntax highlighting and autosuggestions
-- Configuration files in `fish/`
+- Custom key bindings and colors
 
 ### Neovim
 - Modern text editor based on Vim
 - Custom configurations and plugins
-- Configuration files in `nvim/`
-
-### iTerm2
-- Feature-rich terminal emulator for macOS
-- Custom color schemes and preferences
-- Configuration files in `iterm2/`
+- Configured as default Git editor
 
 ## Post Installation
 
@@ -60,14 +70,15 @@ After installation:
 1. Restart your terminal
 2. Fish shell will be set as your default shell
 3. All configurations will be automatically loaded
+4. If terminal opens in zsh, it will automatically switch to fish
 
 ## Customization
 
-Feel free to fork this repository and modify any configurations to match your preferences:
+Feel free to modify any configuration files to match your preferences:
 - Alacritty config: `~/.config/alacritty/`
 - Fish config: `~/.config/fish/`
 - Neovim config: `~/.config/nvim/`
-- iTerm2 preferences will be in `~/Library/Preferences/`
+- Git config: `~/.gitconfig` and `~/.gitignore_global`
 
 ## License
 
