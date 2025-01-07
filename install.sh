@@ -66,6 +66,15 @@ mkdir -p "$CONFIG_DIR"
 echo -e "${GREEN}Moving all configurations to $CONFIG_DIR...${NC}"
 cp -r ./* "$CONFIG_DIR/"
 
+# Git configuration
+echo -e "${BLUE}Setting up Git configuration...${NC}"
+if [ -f "$CONFIG_DIR/git/.gitconfig" ]; then
+    ln -sf "$CONFIG_DIR/git/.gitconfig" "$HOME/.gitconfig"
+fi
+if [ -f "$CONFIG_DIR/git/.gitignore_global" ]; then
+    ln -sf "$CONFIG_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
+fi
+
 echo -e "${GREEN}Installation complete!${NC}"
 echo -e "${BLUE}All configurations have been moved to: $CONFIG_DIR${NC}"
 echo -e "${BLUE}Please restart your terminal to apply all changes.${NC}"
